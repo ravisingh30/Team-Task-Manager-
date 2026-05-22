@@ -212,11 +212,24 @@ tasks           -- id, project_id, title, description, status, priority,
 
 ```
 team-task-manager/
-├── server.js        ← all backend logic (DB, auth, all routes)
+├── server.js              # Express app entry point
+├── database.js            # SQLite setup & schema
+├── middleware/
+│   └── auth.js            # JWT auth + RBAC middleware
+├── routes/
+│   ├── auth.js            # Auth endpoints
+│   ├── projects.js        # Project & member endpoints
+│   ├── tasks.js           # Task endpoints
+│   └── dashboard.js       # Dashboard aggregations
+├── public/
+│   └── index.html         # Single-page application frontend
 ├── package.json
-├── railway.json
-└── public/
-    └── index.html   ← full SPA frontend
+├── railway.json           # Railway deployment config
+├── .env.example
+├── .gitignore
+└── README.md
+```
+
 ---
 
 ## License
